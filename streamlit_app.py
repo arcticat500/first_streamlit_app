@@ -22,9 +22,9 @@ streamlit.dataframe(fruits_to_show)
 streamlit.header("Fruityvice Fruit Advice!")
 import requests
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
-streamlit.text(fruityvice_response.json())
 
-# write your own comment -what does the next line do? 
+
+# write your own comment -what does the next line do? answer: next line is like a function to remove the raw data response on screen
 fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
-# write your own comment - what does this do?
+# write your own comment - what does this do? answer: tosses the normlized data into a table format
 streamlit.dataframe(fruityvice_normalized)
