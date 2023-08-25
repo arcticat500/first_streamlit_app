@@ -31,21 +31,22 @@ try:
     if not fruit_choice:
         streamlit.error("Please select a fruit to get information.")
     else:
-      
-#fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
-#streamlit.write('The user entered ', fruit_choice)
-#import requests
         fruityvice_response = requests.get("https://fruityvice.com/api/fruit/"+ fruit_choice)
         fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
         streamlit.dataframe(fruityvice_normalized)
+        
 except URLError as e: 
   streamli.error()
+    
+#fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
+#streamlit.write('The user entered ', fruit_choice)
+
 
 
 # write your own comment -what does the next line do? answer: next line is like a function to remove the raw data response on screen
-fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
+#fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 # write your own comment - what does this do? answer: tosses the normlized data into a table format
-streamlit.dataframe(fruityvice_normalized)
+#streamlit.dataframe(fruityvice_normalized)
 
 #don't run anything past here while we troubleshoot
 streamlit.stop()
