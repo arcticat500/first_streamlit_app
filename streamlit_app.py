@@ -54,7 +54,7 @@ except URLError as e:
 # write your own comment - what does this do? answer: tosses the normlized data into a table format
 #streamlit.dataframe(fruityvice_normalized)
 
-#don't run anything past here while we troubleshoot
+#don't run anything past here while we troubleshoot 
 streamlit.stop()
 #import snowflake.connector
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
